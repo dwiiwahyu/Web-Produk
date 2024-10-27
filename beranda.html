@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bien Clothes - Toko Pakaian</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="c:\Users\dwi wahyu utami\Downloads\logo bien clothes.jpg" alt="Bien Clothes Logo" class="logo-image">
+            <div class="logo-text">Bien Clothes</div>
+        </div>
+        <nav>
+            <a href="Beranda.html">Beranda</a>
+            <a href="Produk.html">Produk</a>
+            <a href="Tentang_Kami.html">Tentang Kami</a>
+            <a href="Kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Look Cool And Stylish With Bien Clothes</h1>
+    </section>
+
+    <!-- New image slider section -->
+    <div class="slider-container">
+        <img class="slider-image active" src="c:\Users\dwi wahyu utami\Downloads\model utsman bin affan.jpg" alt="Informatics Shirt">
+        <img class="slider-image" src="c:\Users\dwi wahyu utami\Downloads\model abu bakar.jpg" alt="Abu Bakar Shirt">
+        <img class="slider-image" src="c:\Users\dwi wahyu utami\Downloads\model utsman bin affan 2.jpg" alt="Utsman Bin Affan Shirt">
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+    </div>
+
+    <section class="products">
+        <div id="imagePopup" class="popup">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img class="popup-content" id="popupImg">
+        </div>
+    
+        <section class="products">
+            <div class="product">
+                <img src="c:\Users\dwi wahyu utami\Downloads\abu bakar shirt.jpg" 
+                    alt="Abu Bakar Shirt" 
+                    onclick="showPopup(this)">
+                <h3>Abu Bakar Shirt</h3>
+                <a href="Produk.html">
+                    <button>Details</button>
+                </a>
+            </div>
+            <div class="product">
+                <img src="c:\Users\dwi wahyu utami\Downloads\informatics shirt.jpg" 
+                    alt="Informatics Shirt" 
+                    onclick="showPopup(this)">
+                <h3>Informatics Shirt</h3>
+                <a href="Produk.html">
+                    <button>Details</button>
+                </a>
+            </div>
+            <div class="product">
+                <img src="c:\Users\dwi wahyu utami\Downloads\utsman bin affan shirt.jpg" 
+                    alt="Utsman Bin Affan Shirt" 
+                    onclick="showPopup(this)">
+                <h3>Utsman Bin Affan Shirt</h3>
+                <a href="Produk.html">
+                    <button>Details</button>
+                </a>
+            </div>
+            <div class="product">
+                <img src="c:\Users\dwi wahyu utami\Downloads\MEOGUK MOCKUP.png" 
+                    alt="MEOGUK Shirt" 
+                    onclick="showPopup(this)">
+                <h3>MEOGUK Shirt</h3>
+                <a href="Produk.html">
+                    <button>Details</button>
+                </a>
+            </div>
+        </section>
+
+    <footer>
+        <p>&copy; 2024 Bien Clothes. Semua hak dilindungi.</p>
+    </footer>
+    
+<script>
+        let slideIndex = 0;
+        showSlides();
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slider-image");
+            if (slideIndex >= slides.length) {slideIndex = 0}
+            if (slideIndex < 0) {slideIndex = slides.length - 1}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+        // Popup functionality
+        function showPopup(img) {
+            const popup = document.getElementById("imagePopup");
+            const popupImg = document.getElementById("popupImg");
+            popup.style.display = "block";
+            popupImg.src = img.src;
+        }
+
+        function closePopup() {
+            document.getElementById("imagePopup").style.display = "none";
+        }
+
+        // Close popup when clicking outside the image
+        window.onclick = function(event) {
+            const popup = document.getElementById("imagePopup");
+            if (event.target == popup) {
+                popup.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
