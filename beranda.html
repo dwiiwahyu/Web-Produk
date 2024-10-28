@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="c:\Users\dwi wahyu utami\Downloads\logo bien clothes.jpg" alt="Bien Clothes Logo" class="logo-image">
+            <img src="c:\Users\RYZEN\Downloads\logo bien clothes.jpg" alt="Bien Clothes Logo" class="logo-image">
             <div class="logo-text">Bien Clothes</div>
         </div>
         <nav>
@@ -26,100 +26,55 @@
 
     <!-- New image slider section -->
     <div class="slider-container">
-        <img class="slider-image active" src="c:\Users\dwi wahyu utami\Downloads\model utsman bin affan.jpg" alt="Informatics Shirt">
-        <img class="slider-image" src="c:\Users\dwi wahyu utami\Downloads\model abu bakar.jpg" alt="Abu Bakar Shirt">
-        <img class="slider-image" src="c:\Users\dwi wahyu utami\Downloads\model utsman bin affan 2.jpg" alt="Utsman Bin Affan Shirt">
-        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-        <a class="next" onclick="changeSlide(1)">&#10095;</a>
-        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        <img class="slider-image active" src="c:\Users\RYZEN\Downloads\model utsman bin affan.jpg">
+        <img class="slider-image" src="c:\Users\RYZEN\Downloads\model utsman bin affan.jpg">
+        <img class="slider-image" src="c:\Users\RYZEN\Downloads\model utsman bin affan 2.jpg">
+        <img class="slider-image" src="c:\Users\RYZEN\Downloads\model abu bakar.jpg">
+        <a class="prev" id="prev">&#10094;</a>
+        <a class="next" id="next">&#10095;</a>
     </div>
 
     <section class="products">
-        <div id="imagePopup" class="popup">
-            <span class="close" onclick="closePopup()">&times;</span>
-            <img class="popup-content" id="popupImg">
+        <div class="product">
+            <img src="c:\Users\RYZEN\Downloads\abu bakar shirt.jpg" alt="Abu Bakar Shirt">
+            <h3>Abu Bakar Shirt</h3>
+            <p>Rp 299.000</p>
+            <a href="Produk.html">
+                <button>Tambah ke Keranjang</button>
+            </a>
         </div>
-    
-        <section class="products">
-            <div class="product">
-                <img src="c:\Users\dwi wahyu utami\Downloads\abu bakar shirt.jpg" 
-                    alt="Abu Bakar Shirt" 
-                    onclick="showPopup(this)">
-                <h3>Abu Bakar Shirt</h3>
-                <a href="Produk.html">
-                    <button>Details</button>
-                </a>
-            </div>
-            <div class="product">
-                <img src="c:\Users\dwi wahyu utami\Downloads\informatics shirt.jpg" 
-                    alt="Informatics Shirt" 
-                    onclick="showPopup(this)">
-                <h3>Informatics Shirt</h3>
-                <a href="Produk.html">
-                    <button>Details</button>
-                </a>
-            </div>
-            <div class="product">
-                <img src="c:\Users\dwi wahyu utami\Downloads\utsman bin affan shirt.jpg" 
-                    alt="Utsman Bin Affan Shirt" 
-                    onclick="showPopup(this)">
-                <h3>Utsman Bin Affan Shirt</h3>
-                <a href="Produk.html">
-                    <button>Details</button>
-                </a>
-            </div>
-            <div class="product">
-                <img src="c:\Users\dwi wahyu utami\Downloads\MEOGUK MOCKUP.png" 
-                    alt="MEOGUK Shirt" 
-                    onclick="showPopup(this)">
-                <h3>MEOGUK Shirt</h3>
-                <a href="Produk.html">
-                    <button>Details</button>
-                </a>
-            </div>
-        </section>
+        <div class="product">
+            <img src="c:\Users\RYZEN\Downloads\informatics shirt.jpg" alt="Informatics Shirt">
+            <h3>Informatics Shirt</h3>
+            <p>Rp 399.000</p>
+            <a href="Produk.html">
+                <button>Tambah ke Keranjang</button>
+            </a>
+        </div>
+        <div class="product">
+            <img src="c:\Users\RYZEN\Downloads\utsman bin affan shirt.jpg" alt="Utsman Bin Affan Shirt">
+            <h3>Utsman Bin Affan Shirt</h3>
+            <p>Rp 299.000</p>
+            <a href="Produk.html">
+            </a>
+            <button>Tambah ke Keranjang</button>
+        </div>
+        <div class="product">
+            <img src="c:\Users\RYZEN\Downloads\MEOGUK MOCKUP(1).png" alt="MEOGUK Shirt">
+            <h3>MEOGUK Shirt</h3>
+            <p>Rp 299.000</p>
+            <a href="Produk.html">
+            </a>
+            <button>Tambah ke Keranjang</button>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2024 Bien Clothes. Semua hak dilindungi.</p>
     </footer>
-    
-<script>
-        let slideIndex = 0;
-        showSlides();
-        function changeSlide(n) {
-            showSlides(slideIndex += n);
-        }
+        
+    <!-- Tautkan file JavaScript eksternal -->
+    <script src="slider.js"></script>
 
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slider-image");
-            if (slideIndex >= slides.length) {slideIndex = 0}
-            if (slideIndex < 0) {slideIndex = slides.length - 1}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex].style.display = "block";
-            setTimeout(showSlides, 5000); // Change image every 5 seconds
-        }
-        // Popup functionality
-        function showPopup(img) {
-            const popup = document.getElementById("imagePopup");
-            const popupImg = document.getElementById("popupImg");
-            popup.style.display = "block";
-            popupImg.src = img.src;
-        }
-
-        function closePopup() {
-            document.getElementById("imagePopup").style.display = "none";
-        }
-
-        // Close popup when clicking outside the image
-        window.onclick = function(event) {
-            const popup = document.getElementById("imagePopup");
-            if (event.target == popup) {
-                popup.style.display = "none";
-            }
-        }
-    </script>
 </body>
 </html>
